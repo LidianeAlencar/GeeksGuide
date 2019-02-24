@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "712704607026",
+    "firebase_url": "https://geeksguide-5385e.firebaseio.com",
+    "project_id": "geeksguide-5385e",
+    "storage_bucket": "geeksguide-5385e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712704607026:android:43db46ca6c29174a",
+        "android_client_info": {
+          "package_name": "br.com.app.geeksguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712704607026-2u55a1dqjakk3p93b5085gr8bjg5p5j2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.app.geeksguide",
+            "certificate_hash": "aa1f44ef258a1f73e1b10516702799df983fa006"
+          }
+        },
+        {
+          "client_id": "712704607026-mjr1qqht3afkso159hdesac5jd39l3b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAthRalfJfpxSmETCPN989dBfwA3droCEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712704607026-mjr1qqht3afkso159hdesac5jd39l3b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
