@@ -25,10 +25,10 @@ import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
 import android.widget.Toast
+import com.facebook.stetho.Stetho
 
 import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,6 +36,9 @@ class LoginActivity : AppCompatActivity() {
     private val newUserRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        Stetho.initializeWithDefaults(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -63,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMenu() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, ListarActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()
