@@ -37,6 +37,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.google.firebase:firebase-core:16.0.1'
 
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     kapt 'android.arch.persistence.room:compiler:1.1.1'
@@ -47,3 +49,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+
+
+//NOTE: Create project on Firebase. Add google-services.json in the test app to this plugin to function
+apply plugin: 'com.google.gms.google-services'
+// Work around for onesignal-gradle-plugin compatibility
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
