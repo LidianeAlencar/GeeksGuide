@@ -22,6 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ce12d6ebca355da1b990ab9ba24a8d3a7dcc318
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -44,6 +48,7 @@
             android:name=".SignUpActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".SobreActivity" />
+<<<<<<< HEAD
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -52,6 +57,19 @@
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
+=======
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+>>>>>>> 4ce12d6ebca355da1b990ab9ba24a8d3a7dcc318
     </application>
 
 </manifest>
