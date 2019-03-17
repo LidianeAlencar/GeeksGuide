@@ -5,9 +5,16 @@ import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import br.com.app.geeksguide.model.Local
 import kotlinx.android.synthetic.main.activity_listar.*
 import kotlinx.android.synthetic.main.content_lista.*
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
+
+
+
+
 
 class ListarActivity : AppCompatActivity() {
 
@@ -22,15 +29,15 @@ class ListarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_listar)
 
         fab.setOnClickListener {
-            val dialog = NovoLocalDialog()
-            dialog.show(supportFragmentManager, "CriarLocal")
+            mostrarDialog(Local(null, null))
         }
 
         mostrarDados()
 
         rvLocais.layoutManager = LinearLayoutManager(this)
-        adapter = LocalAdapter(locais)
+        adapter = LocalAdapter(this, locais)
         rvLocais.adapter = adapter
+
 
     }
 
@@ -48,6 +55,10 @@ class ListarActivity : AppCompatActivity() {
                 })
     }
 
+    public fun mostrarDialog(local: Local) {
+        val dialog = NovoLocalDialog()
+        dialog.setLocal(local)
 
-
+        dialog.show(supportFragmentManager, "CriarLocal")
+    }
 }
