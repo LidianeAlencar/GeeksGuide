@@ -66,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMenu() {
-        val intent = Intent(this, ListarActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()
