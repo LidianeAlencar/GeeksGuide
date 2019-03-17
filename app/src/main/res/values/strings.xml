@@ -22,7 +22,10 @@
     <string name="ContactUS">Entre em Contato</string>
     <string name="shareAPPTitle">Compartilhe nosso aplicativo</string>
 
+
+    <!--NAVIGATION BAR-->
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_list">Listar</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_logout">Sair</string>
 </resources>
