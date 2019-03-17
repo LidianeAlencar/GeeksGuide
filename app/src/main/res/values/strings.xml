@@ -5,6 +5,7 @@
     <string name="txtEmail">Email</string>
     <string name="txtSenha">Senha</string>
     <string name="txtLogin">Acessar</string>
+    <string name="txtNome">Nome</string>
     <string name="txtCriarConta">Criar Conta</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
