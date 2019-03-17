@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "712704607026-h851emcd89bgas95p6ip8n0m66g1db8c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.app.geeksguide",
+            "certificate_hash": "e719c8b77567e478e588e2c442109824d89dd397"
+          }
+        },
+        {
           "client_id": "712704607026-mjr1qqht3afkso159hdesac5jd39l3b0.apps.googleusercontent.com",
           "client_type": 3
         }

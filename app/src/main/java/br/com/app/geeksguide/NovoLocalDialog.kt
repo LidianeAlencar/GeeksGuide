@@ -13,6 +13,9 @@ import android.widget.EditText
 import android.widget.Spinner
 import br.com.app.geeksguide.dao.BancoDeDados
 import br.com.app.geeksguide.model.Local
+import android.content.DialogInterface
+
+
 
 
 class NovoLocalDialog() : DialogFragment() {
@@ -35,6 +38,11 @@ class NovoLocalDialog() : DialogFragment() {
         if (local?.id != null) {
             title = "Editar Local"
             titlePositive = "Alterar"
+
+            builder.setNeutralButton("Excluir") { _, _ ->
+                val db = BancoDeDados.getDatabase(activity!!.applicationContext)
+                DeleteAsyncTask(db!!).execute(local)
+            }
         } else {
             title = "Adicionar Local"
             titlePositive = "Adicionar"
@@ -51,16 +59,18 @@ class NovoLocalDialog() : DialogFragment() {
             Log.d("#Local", local.nome)
 
             if (local.nome != "")
-                InsertAsyncTask(db!!).execute(local)
+                InsertUpdateAsyncTask(db!!).execute(local)
         }
 
 
         builder.setNegativeButton("Cancelar", null)
+
+
         return builder.create()
     }
 
 
-    private inner class InsertAsyncTask internal constructor(appDatabase: BancoDeDados) : AsyncTask<Local, Void, String>() {
+    private inner class InsertUpdateAsyncTask internal constructor(appDatabase: BancoDeDados) : AsyncTask<Local, Void, String>() {
         private val db: BancoDeDados = appDatabase
 
         override fun doInBackground(vararg params: Local): String {
@@ -69,6 +79,16 @@ class NovoLocalDialog() : DialogFragment() {
             } else {
                 db.localDAO().inserir(params[0])
             }
+
+            return ""
+        }
+    }
+
+    private inner class DeleteAsyncTask internal constructor(appDatabase: BancoDeDados) : AsyncTask<Local, Void, String>() {
+        private val db: BancoDeDados = appDatabase
+
+        override fun doInBackground(vararg params: Local): String {
+            db.localDAO().apagar(params[0])
 
             return ""
         }

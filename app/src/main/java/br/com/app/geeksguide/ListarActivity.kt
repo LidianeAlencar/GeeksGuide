@@ -5,15 +5,14 @@ import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.View
 import br.com.app.geeksguide.model.Local
 import kotlinx.android.synthetic.main.activity_listar.*
 import kotlinx.android.synthetic.main.content_lista.*
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
-
-
-
+import com.google.firebase.iid.FirebaseInstanceId
 
 
 class ListarActivity : AppCompatActivity() {
@@ -38,7 +37,8 @@ class ListarActivity : AppCompatActivity() {
         adapter = LocalAdapter(this, locais)
         rvLocais.adapter = adapter
 
-
+        val token = FirebaseInstanceId.getInstance().token
+        Log.i("###TOKEN", token)
     }
 
 

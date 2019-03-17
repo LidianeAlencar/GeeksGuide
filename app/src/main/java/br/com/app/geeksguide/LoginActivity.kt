@@ -72,4 +72,13 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
+
+    private fun isEmailValid(email: String): Boolean {
+        return email.contains("@")
+    }
+
+    private fun isPasswordValid(password: String): Boolean {
+        return password.length > 4
+    }
+
 }
