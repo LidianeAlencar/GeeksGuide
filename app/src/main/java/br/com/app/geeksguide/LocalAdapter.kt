@@ -1,13 +1,20 @@
 package br.com.app.geeksguide
 
+import android.app.Dialog
+import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import br.com.app.geeksguide.model.Local
+import android.content.ContextWrapper
 
-class LocalAdapter(var locais: List<Local>) : RecyclerView.Adapter<LocalAdapter.LocalViewHolder>() {
+
+
+class LocalAdapter(var context: Context, var locais: List<Local>) : RecyclerView.Adapter<LocalAdapter.LocalViewHolder>() {
     override fun getItemCount(): Int {
         return locais.size
     }
@@ -25,6 +32,13 @@ class LocalAdapter(var locais: List<Local>) : RecyclerView.Adapter<LocalAdapter.
     override fun onBindViewHolder(holder: LocalViewHolder, i: Int) {
         val local = locais[i]
         holder.tvLocal.text = local.nome
+
+        holder.tvLocal.setOnClickListener {view ->
+
+            (this.context as ListarActivity).mostrarDialog(local)
+            true
+        }
+
     }
 
     class LocalViewHolder(v: View) : RecyclerView.ViewHolder(v) {
