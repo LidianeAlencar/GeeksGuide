@@ -18,4 +18,8 @@
     <string name="shareContent">Compartilhe nosso APP!</string>
     <string name="ContactUS">Entre em Contato</string>
     <string name="shareAPPTitle">Compartilhe nosso aplicativo</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

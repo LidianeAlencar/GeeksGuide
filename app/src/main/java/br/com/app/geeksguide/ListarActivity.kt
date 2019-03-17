@@ -35,18 +35,18 @@ class ListarActivity : AppCompatActivity() {
     }
 
 
-        private fun mostrarDados() {
-            //of()?—?indica a activity ou Fragment em que o ViewModel será utilizado
-            //get()?—?indica o ViewModel que será utilizado.
-            listarViewModel = ViewModelProviders.of(this)
-                    .get(ListarViewModel::class.java)
+    private fun mostrarDados() {
+        //of()?—?indica a activity ou Fragment em que o ViewModel será utilizado
+        //get()?—?indica o ViewModel que será utilizado.
+        listarViewModel = ViewModelProviders.of(this)
+                .get(ListarViewModel::class.java)
 
-            listarViewModel.locais
-                    .observe(this, Observer<List<Local>> { locais ->
-                        adapter?.setList(locais!!)
-                        rvLocais.adapter?.notifyDataSetChanged()
-                    })
-        }
+        listarViewModel.locais
+                .observe(this, Observer<List<Local>> { locais ->
+                    adapter?.setList(locais!!)
+                    rvLocais.adapter?.notifyDataSetChanged()
+                })
+    }
 
 
 
