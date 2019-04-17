@@ -22,6 +22,7 @@ class SignUpActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         btCriar.setOnClickListener {
+
             mAuth.createUserWithEmailAndPassword(
                     edEmail.text.toString(),
                     edSenha.text.toString()

@@ -45,6 +45,15 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
+/*        mAuth.addAuthStateListener { firebaseAuth ->
+            if (firebaseAuth.currentUser == null || !firebaseAuth.currentUser!!.isEmailVerified)
+            //User not logger or email not verified
+            else {
+                val currentUser = firebaseAuth.currentUser!!
+                goToMenu()
+            }
+        }*/
+
 
         btCriarConta.setOnClickListener {
             startActivityForResult(Intent(this, SignUpActivity::class.java), newUserRequestCode)
@@ -57,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
                     edSenha.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
+
                     goToMenu()
                 } else {
                     Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
