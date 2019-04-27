@@ -24,6 +24,8 @@ class SignUpActivity : AppCompatActivity() {
 
         btCriar.setOnClickListener {
 
+            Toast.makeText(this@SignUpActivity, "Estamos criando sua conta :D", Toast.LENGTH_SHORT).show()
+
             mAuth.createUserWithEmailAndPassword(
                     edEmail.text.toString(),
                     edSenha.text.toString()

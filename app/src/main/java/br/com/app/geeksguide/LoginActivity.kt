@@ -1,5 +1,6 @@
 package br.com.app.geeksguide
 
+import android.Manifest
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.TargetApi
@@ -24,6 +25,9 @@ import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.widget.EditText
 import android.widget.Toast
 import com.facebook.stetho.Stetho
 
@@ -55,18 +59,26 @@ class LoginActivity : AppCompatActivity() {
         }*/
 
 
+        edEmail.setText("email@email.com")
+        edSenha.setText("123456")
+
+
+
         btCriarConta.setOnClickListener {
             startActivityForResult(Intent(this, SignUpActivity::class.java), newUserRequestCode)
         }
 
         btLogin.setOnClickListener {
 
+
+
+            Toast.makeText(this@LoginActivity, "Efetuando Login", Toast.LENGTH_SHORT).show()
+
             mAuth.signInWithEmailAndPassword(
                     edEmail.text.toString(),
                     edSenha.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
-
                     goToMenu()
                 } else {
                     Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
@@ -83,6 +95,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
+
+
+
+
     private fun isEmailValid(email: String): Boolean {
         return email.contains("@")
     }
@@ -90,5 +106,6 @@ class LoginActivity : AppCompatActivity() {
     private fun isPasswordValid(password: String): Boolean {
         return password.length > 4
     }
+
 
 }

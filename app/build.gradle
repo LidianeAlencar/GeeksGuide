@@ -10,6 +10,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "br.com.app.geeksguide"
         minSdkVersion 15
         targetSdkVersion 28

@@ -11,9 +11,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
+        android:textFontWeight="bold"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         tools:text="Local" />
+
+    <TextView
+        android:id="@+id/tvEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        tools:text="Horario" />
 
     <TextView
         android:id="@+id/tvHorario"
