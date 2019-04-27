@@ -51,7 +51,7 @@ class NovoLocalDialog() : DialogFragment() {
                 DeleteAsyncTask(db!!).execute(local)
             }
         } else {
-            title = "Adicionar Local"
+            title = "Adicione seu Local Favorito"
             titlePositive = "Adicionar"
         }
 

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".ListarActivity">
 
 
@@ -22,8 +23,8 @@
         app:layout_anchorGravity="bottom|right|end"
         app:layout_constraintBottom_toTopOf="@+id/navigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_dashboard_black_24dp" />
-    
+        app:srcCompat="@drawable/ic_map_marker_plus" />
+
 
     <FrameLayout
         android:id="@+id/container"

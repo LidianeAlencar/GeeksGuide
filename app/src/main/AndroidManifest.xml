@@ -47,10 +47,16 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ListarActivity" />
+
+
+        <activity
+            android:name=".ListarActivity"
+            android:label="Meus Locais Favoritos" />
+
         <activity
             android:name=".SignUpActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
         <activity android:name=".SobreActivity" />
 
         <service android:name=".MyFirebaseMessagingService">
