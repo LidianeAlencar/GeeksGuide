@@ -4,6 +4,7 @@ package br.com.app.geeksguide
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import br.com.app.geeksguide.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -28,30 +29,16 @@ class SignUpActivity : AppCompatActivity() {
                     edSenha.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    saveInRealTimeDatabase()
+
+                    Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
+                    val returnIntent = Intent()
+                    returnIntent.putExtra("email", edEmail.text.toString())
+                    setResult(RESULT_OK, returnIntent)
+                    finish()
                 } else {
                     Toast.makeText(this@SignUpActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
-
-    private fun saveInRealTimeDatabase() {
-        val user = User(edNome.text.toString(), edEmail.text.toString())
-        FirebaseDatabase.getInstance().getReference("Users")
-                .child(FirebaseAuth.getInstance().currentUser!!.uid)
-                .setValue(user)
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
-                        val returnIntent = Intent()
-                        returnIntent.putExtra("email", edEmail.text.toString())
-                        setResult(RESULT_OK, returnIntent)
-                        finish()
-                    } else {
-                        Toast.makeText(this, "Erro ao criar o usuário", Toast.LENGTH_SHORT).show()
-                    }
-                }
-    }
-
 }
