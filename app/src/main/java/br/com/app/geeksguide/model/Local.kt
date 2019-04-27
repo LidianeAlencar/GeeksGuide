@@ -13,5 +13,7 @@ data class Local (
         //seja gerado automaticamente
         @PrimaryKey(autoGenerate = true)
         var id: Int? = null,
-        var nome: String? = null
+        var nome: String? = null,
+        var endereco: String? = null,
+        var horario: String? = null
        )

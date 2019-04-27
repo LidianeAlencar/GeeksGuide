@@ -28,7 +28,7 @@ class ListarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_listar)
 
         fab.setOnClickListener {
-            mostrarDialog(Local(null, null))
+            mostrarDialog(Local(null, null, null, null ))
         }
 
         mostrarDados()

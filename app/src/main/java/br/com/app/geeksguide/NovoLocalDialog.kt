@@ -14,14 +14,15 @@ import android.widget.Spinner
 import br.com.app.geeksguide.dao.BancoDeDados
 import br.com.app.geeksguide.model.Local
 import android.content.DialogInterface
-
-
+import kotlinx.android.synthetic.main.novo_local_dialog.*
 
 
 class NovoLocalDialog() : DialogFragment() {
 
     private lateinit var builder: AlertDialog.Builder
     private lateinit var etLocal: EditText
+    private lateinit var etEndereco: EditText
+    private lateinit var etHorario: EditText
     private lateinit var local: Local
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -30,8 +31,14 @@ class NovoLocalDialog() : DialogFragment() {
         val v = activity?.layoutInflater?.inflate(R.layout.novo_local_dialog, null)!!
 
         etLocal = v.findViewById(R.id.etLocal)
+        etEndereco = v.findViewById(R.id.etEndereco)
+        etHorario = v.findViewById(R.id.etHorario)
+
 
         etLocal.setText(local.nome)
+        etEndereco.setText(local.endereco)
+        etHorario.setText(local.horario)
+
 
         var title = ""
         var titlePositive = ""
@@ -55,6 +62,9 @@ class NovoLocalDialog() : DialogFragment() {
             val db = BancoDeDados.getDatabase(activity!!.applicationContext)
 
             local.nome = etLocal.text.toString()
+            local.endereco = etEndereco.text.toString()
+            local.horario = etHorario.text.toString()
+
             //Log.d("#Local", local.id.toString())
             Log.d("#Local", local.nome)
 

@@ -32,6 +32,9 @@ class LocalAdapter(var context: Context, var locais: List<Local>) : RecyclerView
     override fun onBindViewHolder(holder: LocalViewHolder, i: Int) {
         val local = locais[i]
         holder.tvLocal.text = local.nome
+      //  holder.tvEndereco.text = local.endereco
+        holder.tvHorario.text = local.horario
+
 
         holder.tvLocal.setOnClickListener {view ->
 
@@ -43,6 +46,9 @@ class LocalAdapter(var context: Context, var locais: List<Local>) : RecyclerView
 
     class LocalViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         var tvLocal: TextView = v.findViewById(R.id.tvLocal)
+       // var tvEndereco: TextView = v.findViewById(R.id.tvEndereco)
+        var tvHorario: TextView = v.findViewById(R.id.tvHorario)
+
         //var tvPlataforma: TextView = v.findViewById(R.id.tvPlataforma)
     }
 }
