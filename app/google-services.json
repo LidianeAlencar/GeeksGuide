@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "712704607026-2u55a1dqjakk3p93b5085gr8bjg5p5j2.apps.googleusercontent.com",
+          "client_id": "712704607026-6pvl1n05h156f3b2ppmh8r65ig8f61t3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "br.com.app.geeksguide",
-            "certificate_hash": "aa1f44ef258a1f73e1b10516702799df983fa006"
+            "certificate_hash": "5d56405b906a72dac4ca76aced0c228c3d729326"
           }
         },
         {
@@ -28,6 +28,14 @@
           "android_info": {
             "package_name": "br.com.app.geeksguide",
             "certificate_hash": "e719c8b77567e478e588e2c442109824d89dd397"
+          }
+        },
+        {
+          "client_id": "712704607026-2u55a1dqjakk3p93b5085gr8bjg5p5j2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.app.geeksguide",
+            "certificate_hash": "aa1f44ef258a1f73e1b10516702799df983fa006"
           }
         },
         {
@@ -41,20 +49,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "712704607026-mjr1qqht3afkso159hdesac5jd39l3b0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

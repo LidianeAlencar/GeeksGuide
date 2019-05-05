@@ -14,6 +14,7 @@ import android.view.View
 import android.content.pm.PackageManager
 import android.support.v4.content.ContextCompat
 import android.support.annotation.NonNull
+import android.support.design.widget.BottomNavigationView
 import android.support.v4.content.ContextCompat.startActivity
 
 
@@ -30,6 +31,16 @@ class SobreActivity : AppCompatActivity() {
         val btFind = findViewById<Button>(R.id.btFind)
         val btCall = findViewById<Button>(R.id.btCall)
         val btShare = findViewById<Button>(R.id.btShare)
+
+
+        //actionbar
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "Sobre"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+
 
         btFind.setOnClickListener{
             //Toast.makeText(this, "Hi there! This is a Toast.", Toast.LENGTH_SHORT).show()
@@ -55,6 +66,11 @@ class SobreActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
 
