@@ -18,7 +18,7 @@
         android:textColor="#494949"
         android:textSize="19sp"
         android:textStyle="bold"
-        tools:text="Local" />
+        tools:text="@string/place" />
 
     <TextView
         android:id="@+id/tvEndereco"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:textColor="#707070"
         android:textSize="14sp"
-        tools:text="Endereco" />
+        tools:text="@string/address" />
 
     <TextView
         android:id="@+id/tvHorario"
@@ -36,7 +36,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         android:layout_marginTop="2dp"
-        tools:text="Horario" />
+        tools:text="@string/operation" />
 
     <View
         android:layout_width="fill_parent"

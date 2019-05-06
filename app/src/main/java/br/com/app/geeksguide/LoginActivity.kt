@@ -72,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-            Toast.makeText(this@LoginActivity, "Efetuando Login", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@LoginActivity, getString(R.string.logging), Toast.LENGTH_SHORT).show()
 
             mAuth.signInWithEmailAndPassword(
                     edEmail.text.toString(),

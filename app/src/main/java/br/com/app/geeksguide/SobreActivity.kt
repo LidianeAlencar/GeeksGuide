@@ -30,13 +30,12 @@ class SobreActivity : AppCompatActivity() {
 
         val btFind = findViewById<Button>(R.id.btFind)
         val btCall = findViewById<Button>(R.id.btCall)
-        val btShare = findViewById<Button>(R.id.btShare)
 
 
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Sobre"
+        actionbar!!.title = getString(R.string.title_activity_about)
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
 
@@ -53,16 +52,6 @@ class SobreActivity : AppCompatActivity() {
         //FAZER LIGACAO
         btCall.setOnClickListener{
             makePhoneCall();
-        }
-
-
-        //COMPARTILHAR CONTEUDO
-        btShare.setOnClickListener{
-            val shareIntent = Intent()
-            shareIntent.action = Intent.ACTION_SEND
-            shareIntent.type="text/plain"
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Conheca nosso APP. Geeks Guide - Disponivel na Google Play");
-            startActivity(Intent.createChooser(shareIntent,getString(R.string.shareAPPTitle)))
         }
 
 

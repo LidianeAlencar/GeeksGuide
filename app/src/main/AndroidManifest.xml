@@ -50,13 +50,14 @@
 
         <activity
             android:name=".ListarActivity"
-            android:label="Meus Locais Favoritos" />
+            android:label="@string/title_activity_list" />
 
         <activity
             android:name=".SignUpActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
-        <activity android:name=".SobreActivity" />
+        <activity android:name=".SobreActivity"
+            android:label="@string/title_activity_about" />
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>

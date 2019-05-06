@@ -43,16 +43,16 @@ class NovoLocalDialog() : DialogFragment() {
         var title = ""
         var titlePositive = ""
         if (local?.id != null) {
-            title = "Editar Local"
-            titlePositive = "Alterar"
+            title = getString(R.string.editPlaces)
+            titlePositive = getString(R.string.edit)
 
-            builder.setNeutralButton("Excluir") { _, _ ->
+            builder.setNeutralButton(getString(R.string.delete)) { _, _ ->
                 val db = BancoDeDados.getDatabase(activity!!.applicationContext)
                 DeleteAsyncTask(db!!).execute(local)
             }
         } else {
-            title = "Adicione seu Local Favorito"
-            titlePositive = "Adicionar"
+            title = getString(R.string.addNewLocal)
+            titlePositive = getString(R.string.add)
         }
 
         builder.setView(v)
@@ -73,7 +73,7 @@ class NovoLocalDialog() : DialogFragment() {
         }
 
 
-        builder.setNegativeButton("Cancelar", null)
+        builder.setNegativeButton(getString(R.string.cancel), null)
 
 
         return builder.create()

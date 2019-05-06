@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GeeksGuide</string>
+    <string name="title_activity_maps">Localização</string>
+    <string name="title_activity_list">Lugares de Interesse</string>
+    <string name="title_activity_about">Sobre nós</string>
+    <string name="txtEmail">E-mail</string>
+    <string name="txtPassword">Senha</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtName">Nome</string>
+    <string name="txtCreateAccount">Criar Conta</string>
+    <string name="logging">Efetuando Login</string>
+    <string name="prompt_email">E-mail</string>
+    <string name="prompt_password">"Senha "</string>
+    <string name="action_sign_in">Entre ou Registre-se</string>
+    <string name="action_sign_in_short">Registre-se</string>
+    <string name="error_invalid_email">E-mail inválido</string>
+    <string name="error_invalid_password">Senha muito curta</string>
+    <string name="error_incorrect_password">Senha inválida</string>
+    <string name="error_field_required">Campo obrigatório</string>
+    <string name="shareContent">Compartilhe nosso Aplicativo</string>
+    <string name="ContactUS">Entre em Contato</string>
+    <string name="support">Suporte</string>
+    <string name="addressAbout">Endereço</string>
+    <string name="versionAPP">Versão 1.0</string>
+    <string name="createNewLocal">Criar novo Local</string>
+    <string name="addNewLocal">Adicionar Novo Local</string>
+    <string name="msgDialog">Tem certeza que deseja sair ?</string>
+    <string name="place">Nome do Lugar</string>
+    <string name="address">Endereço</string>
+    <string name="operation">Horário de Funcionamento</string>
+    <string name="add">Adicionar</string>
+    <string name="delete">Deletar</string>
+    <string name="edit">Editar</string>
+    <string name="editPlace">Editar Local</string>
+    <string name="cancel">Cancelar</string>
+    <string name="shareAPPTitle">Compartilhar GeeksGuide</string>
+    <string name="msgShareContent">Conheça nosso Aplicativo. Geeks Guide - Disponível na Play Store</string>
+    <string name="title_share">Compartilhe</string>
+    <string name="title_about">Sobre Nós</string>
+    <string name="title_logout">Sair</string>
+    <string name="editPlaces">Editar Local</string>
+</resources>

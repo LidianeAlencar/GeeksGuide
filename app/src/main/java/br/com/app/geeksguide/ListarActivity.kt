@@ -14,7 +14,9 @@ import kotlinx.android.synthetic.main.activity_listar.*
 import kotlinx.android.synthetic.main.content_lista.*
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.iid.FirebaseInstanceId
+import org.jetbrains.anko.alert
 
 
 class ListarActivity : AppCompatActivity() {
@@ -30,18 +32,15 @@ class ListarActivity : AppCompatActivity() {
 //    MENU NAVIGATION
         private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.navigation_list -> {
-                    val intent = Intent(this, ListarActivity::class.java)
-                    startActivity(intent)
-                    //return@OnNavigationItemSelectedListener true
+                R.id.navigation_share -> {
+                    shareContent()
                 }
                 R.id.navigation_about-> {
                     val intent = Intent(this, SobreActivity::class.java)
                     startActivity(intent)
-                   // return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_logout -> {
-                    finish();
+                    logout()
                 }
             }
             false
@@ -66,6 +65,9 @@ class ListarActivity : AppCompatActivity() {
 
         val token = FirebaseInstanceId.getInstance().token
         Log.i("###TOKEN", token)
+
+
+
     }
 
 
@@ -88,4 +90,29 @@ class ListarActivity : AppCompatActivity() {
 
         dialog.show(supportFragmentManager, "CriarLocal")
     }
+
+
+
+    private fun shareContent(){
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.type="text/plain"
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.msgShareContent));
+        startActivity(Intent.createChooser(shareIntent,getString(R.string.shareAPPTitle)))
+    }
+
+    private fun logout(){
+        alert(getString(R.string.msgDialog)) {
+            title = "Alert"
+            yesButton {
+                title = "Yes"
+                FirebaseAuth.getInstance().signOut()
+                finish();
+                System.exit(0);
+            }
+            noButton {title = getString(R.string.cancel) }
+        }.show()
+    }
+
+
 }
